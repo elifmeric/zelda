@@ -8,6 +8,9 @@ to the props of the component
 
 const inialState = {
     position: [0,0],
+    spriteLocation: '0px 0px',
+    direction: 'EAST',
+    walkIndex: 0,
 }
 
 const playerReducer = (state=inialState, action) => {
