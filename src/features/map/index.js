@@ -3,18 +3,20 @@ import { SPRITE_SIZE } from '../../config/constants';
 import './style.scss';
 import {connect} from 'react-redux'
 
-function getTileSprite(type){
-
-    switch(type){
-        case 0:
-            return `grass`
-        case 5:
-            return `rock`
-        case 6:
-            return `tree`
+function getTileSprite(type) {
+    switch(type) {
+      case 0:
+        return 'grass'
+      case 3:
+        return 'tree'
+      case 4:
+        return 'chest'
+      case 5:
+        return 'rock'
+      case 6:
+        return 'tree'
     }
-
-}
+  }
 
 function MapTile(props){
     return <div className={`tile ${getTileSprite(props.tile)}`}
@@ -27,7 +29,11 @@ function MapTile(props){
 }
 
 function MapRow(props){
-    return <div className="row">
+    return <div className="row"
+    style={{
+        height: SPRITE_SIZE,
+    }}
+    >
 {
     props.tiles.map(tile => <MapTile tile={tile} />)
 }
@@ -41,6 +47,9 @@ function Map(props) {
             position: 'relative',
             top: '0px',
             left: '0px',
+            width: '800px',
+            height: '480px',
+            border: '4px solid white',
             }}
         >
         {

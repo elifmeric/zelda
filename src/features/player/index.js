@@ -14,7 +14,6 @@ function Player(props) {
             backgroundPosition: props.spriteLocation,
             width: '40px',
             height: '40px',
-
 }}
         />
         )
